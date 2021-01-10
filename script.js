@@ -24,19 +24,32 @@
 'use strict';
 
 let numberOfFilms =  +prompt('Сколько фильмов вы уже посмотрели?', '');
-let firstAnswer,
-    secondAnswer;
+
 let personalMovieDB = {
     count: numberOfFilms,
     movies: {},
     genres: [],
     privat: false
 };
-for(let i = 0; i < 2; i++) {
-     firstAnswer = prompt('Один из последних просмотренных фильмов?', '');
-     secondAnswer = +prompt('На сколько оцените его?', '');
-     personalMovieDB.movies[firstAnswer] = secondAnswer;
+function userAnswer(obj, a, b) {
+    for(let i = 0; i < 1; i++) {
+            a = prompt('Один из последних просмотренных фильмов?', '');
+            b = +prompt('На сколько оцените его?', '');
+            obj[a] = b;
+   }
 }
+// userAnswer(personalMovieDB.movies);
+
+
+let userFunction = function(obj, a, b) {
+    for(let i = 0; i < 2; i++) {
+        a = prompt('Один из последних просмотренных фильмов?', '');
+        b = +prompt('На сколько оцените его?', '');
+        obj[a] = b;
+    }
+}
+userFunction(personalMovieDB.movies);
+
 // console.log(firstAnswer, secondAnswer);
 
 console.log(personalMovieDB);
